@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Changing the button color activity</title>
+    
+        <style>
+            
+            body {
+                background-image: url(img.jpg);
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+    
+            
+            p {
+                font-size: 1.8rem;
+                margin-bottom: 20px;
+                color: #5ed8b8;
+            }
+    
+            button {
+                padding: 10px 20px;
+                font-size: 1.2em;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                background-color: #470961;
+                color: white;
+                transition: 0.5s ease;
+            }
+    
+            button:hover {
+                background-color: #2980b9;
+            }
+        </style>
+    
+    </head>
+    <body>
+        <p id="message">Click the button to change this text.</p>
+
+        <button onclick="changeText()">Click Me!</button>
+
+        <script>
+            const message = [
+            "Hello, how are you!",
+            "Thanks for clicking the Button below",
+            "You clicked again!",
+            "You can stop clicking Now!",
+            "I said you can stop now!",
+            "Now i am a RED ANGRY BIRD",
+            "GO Back!"
+            
+            ];
+
+            let currentIndex = 0;
+
+            function changeText(){
+                let messageElement = document.getElementById("message");
+                messageElement.innerText = message[currentIndex];
+                currentIndex = (currentIndex + 1) % message.length;
+            }
+        </script>
+    </body>
+</html>
